@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --wedding-gold: #D8B46A;
+  --wedding-ivory: #F4EBD8;
+  --wedding-gold-muted: #B8924E;
+  --wedding-gold-glow: rgba(216, 180, 106, 0.18);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Animations ─────────────────────────────────────── */
+
+@keyframes navReveal {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes countdownReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.wedding-nav-reveal {
+  animation: navReveal 1.0s ease-out 0.2s both;
+}
+
+.wedding-text-reveal {
+  animation: textReveal 1.4s cubic-bezier(0.22, 0.61, 0.36, 1) 0.5s both;
+}
+
+.wedding-countdown-reveal {
+  animation: countdownReveal 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) 1.0s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-nav-reveal,
+  .wedding-text-reveal,
+  .wedding-countdown-reveal {
+    animation: none;
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+  .wedding-nav-reveal {
+    transform: none;
+  }
+}
+
+html, body {
+  margin:   0;
+  padding:  0;
+  /* overflow locked at runtime by WeddingLanding for the fullscreen SPA */
+}
+
+/* ── Responsive utilities ────────────────────────────────────────────────────
+   Tailwind v4 content-scan does not always emit responsive variants in dev.
+   Declaring them explicitly here guarantees they are always present.
+──────────────────────────────────────────────────────────────────────────── */
+@media (min-width: 640px) {
+  .sm\:flex   { display: flex !important; }
+  .sm\:hidden { display: none !important; }
+}
+
+@media (min-width: 768px) {
+  .md\:px-12 { padding-left: 3rem !important; padding-right: 3rem !important; }
+}
+
+@media (min-width: 1024px) {
+  .lg\:flex-row     { flex-direction: row !important; }
+  .lg\:justify-end  { justify-content: flex-end !important; }
+  .lg\:items-start  { align-items: flex-start !important; }
+  .lg\:w-\[48\%\]   { width: 48% !important; }
+  .lg\:w-\[52\%\]   { width: 52% !important; }
+  .lg\:px-16        { padding-left: 4rem !important; padding-right: 4rem !important; }
+  .lg\:gap-16       { gap: 4rem !important; }
+  .lg\:gap-20       { gap: 5rem !important; }
 }
