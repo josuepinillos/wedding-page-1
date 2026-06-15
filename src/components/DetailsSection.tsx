@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import type { CSSProperties } from 'react';
 import { motion } from 'framer-motion';
 import type { AppSection } from './WeddingNavbar';
+import { assetPath } from '@/lib/assetPath';
 
 // ── Palette ────────────────────────────────────────────────────────────────────
 
@@ -331,7 +332,7 @@ export default function DetailsSection({ setActiveSection: _setActiveSection }: 
         width:              '100%',
         height:             '100dvh',
         overflow:           'hidden',
-        backgroundImage:    "url('/assets/fondo-nuestra-historia-premium.png')",
+        backgroundImage:    `url('${assetPath('/assets/fondo-nuestra-historia-premium.png')}')`,
         backgroundSize:     'cover',
         backgroundPosition: 'center',
         backgroundRepeat:   'no-repeat',
@@ -518,14 +519,14 @@ export default function DetailsSection({ setActiveSection: _setActiveSection }: 
                 overflow:      'hidden',
               }}>
                 <PhotoFrame
-                  src="/assets/fondo-novios-2.jpg"
+                  src={assetPath('/assets/fondo-novios-2.jpg')}
                   alt="Josué y Claudia — momento especial"
                   objectPosition="center 22%"
                   sprig="tl"
                   style={{ flex: '0 0 49%' }}
                 />
                 <PhotoFrame
-                  src="/assets/fondo-novios-2.jpg"
+                  src={assetPath('/assets/fondo-novios-2.jpg')}
                   alt="Josué y Claudia — detalle"
                   objectPosition="center 68%"
                   style={{ flex: 1 }}
@@ -535,7 +536,7 @@ export default function DetailsSection({ setActiveSection: _setActiveSection }: 
               {/* Right: large vertical photo */}
               <div style={{ flex:1, overflow:'hidden' }}>
                 <PhotoFrame
-                  src="/assets/fondo-novios-2.jpg"
+                  src={assetPath('/assets/fondo-novios-2.jpg')}
                   alt="Retrato de Josué y Claudia"
                   objectPosition="center top"
                   sprig="br"

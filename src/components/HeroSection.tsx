@@ -3,6 +3,7 @@
 import { Fragment, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import type { AppSection } from './WeddingNavbar';
+import { assetPath } from '@/lib/assetPath';
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
@@ -95,7 +96,7 @@ export default function HeroSection({ setActiveSection: _setActiveSection }: Pro
       {/* ── Background photograph ──────────────────────────────────────────── */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/assets/fondo-novios.jpg')" }}
+        style={{ backgroundImage: `url('${assetPath('/assets/fondo-novios.jpg')}')` }}
         role="img"
         aria-label="Jardín con los novios Josué y Claudia"
       />

@@ -1,6 +1,7 @@
 'use client';
 
 import { Fragment, useEffect, useState } from 'react';
+import { assetPath } from '@/lib/assetPath';
 
 // ── Types ──────────────────────────────────────────────────────────────────────
 
@@ -72,7 +73,7 @@ export default function WeddingHero() {
       {/* ── Background photograph ──────────────────────────────────────────── */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/assets/fondo-novios.jpg')" }}
+        style={{ backgroundImage: `url('${assetPath('/assets/fondo-novios.jpg')}')` }}
         role="img"
         aria-label="Jardín con los novios Josué y Claudia"
       />

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import type { AppSection } from './WeddingNavbar';
+import { assetPath } from '@/lib/assetPath';
 
 // ── Palette ────────────────────────────────────────────────────────────────────
 
@@ -214,7 +215,7 @@ export default function OurStorySection({ setActiveSection: _setActiveSection }:
         width:              '100%',
         height:             '100dvh',
         overflow:           'hidden',
-        backgroundImage:    "url('/assets/fondo-nuestra-historia-premium.png')",
+        backgroundImage:    `url('${assetPath('/assets/fondo-nuestra-historia-premium.png')}')`,
         backgroundSize:     'cover',
         backgroundPosition: 'center',
         backgroundRepeat:   'no-repeat',
@@ -479,7 +480,7 @@ export default function OurStorySection({ setActiveSection: _setActiveSection }:
             >
               {/* Medium photo (top, 54% height) */}
               <PhotoFrame
-                src="/assets/fondo-novios-2.jpg"
+                src={assetPath('/assets/fondo-novios-2.jpg')}
                 alt="Josué y Claudia"
                 objectPosition="center 35%"
                 style={{ flex: '0 0 54%', width: '100%' }}
@@ -488,13 +489,13 @@ export default function OurStorySection({ setActiveSection: _setActiveSection }:
               {/* Two small photos (bottom, share remaining height) */}
               <div style={{ flex: 1, display: 'flex', gap: '10px', overflow: 'hidden' }}>
                 <PhotoFrame
-                  src="/assets/fondo-novios-2.jpg"
+                  src={assetPath('/assets/fondo-novios-2.jpg')}
                   alt="Josué y Claudia"
                   objectPosition="25% center"
                   style={{ flex: 1 }}
                 />
                 <PhotoFrame
-                  src="/assets/fondo-novios-2.jpg"
+                  src={assetPath('/assets/fondo-novios-2.jpg')}
                   alt="Josué y Claudia"
                   objectPosition="75% center"
                   style={{ flex: 1 }}
@@ -511,7 +512,7 @@ export default function OurStorySection({ setActiveSection: _setActiveSection }:
               }}
             >
               <PhotoFrame
-                src="/assets/fondo-novios-2.jpg"
+                src={assetPath('/assets/fondo-novios-2.jpg')}
                 alt="Retrato de Josué y Claudia"
                 objectPosition="center top"
                 style={{ width: '100%', height: '100%' }}
