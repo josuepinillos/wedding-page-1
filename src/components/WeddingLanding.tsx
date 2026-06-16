@@ -6,6 +6,7 @@ import WeddingNavbar, { type AppSection } from './WeddingNavbar';
 import HeroSection from './HeroSection';
 import OurStorySection from './OurStorySection';
 import DetailsSection from './DetailsSection';
+import GallerySection from './GallerySection';
 
 // ── Placeholder for sections not yet built ─────────────────────────────────────
 
@@ -99,8 +100,12 @@ export default function WeddingLanding() {
           />
         )}
 
-        {(activeSection === 'galeria' || activeSection === 'rsvp') && (
-          <PlaceholderSection key={activeSection} label={activeSection} />
+        {activeSection === 'galeria' && (
+          <GallerySection key="galeria" setActiveSection={setActiveSection} />
+        )}
+
+        {activeSection === 'rsvp' && (
+          <PlaceholderSection key="rsvp" label="rsvp" />
         )}
       </AnimatePresence>
     </div>
